@@ -1,0 +1,51 @@
+@prefix this: <http://w3id.org/nanopub_mario/CertID_16f3d217-da33-11e9-b6e5-fc4dd447acf2> .
+@prefix sub: <http://w3id.org/nanopub_mario/CertID_16f3d217-da33-11e9-b6e5-fc4dd447acf2#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcelem: <http://purl.org/dc/elements/1.1/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix pav: <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <https://schema.org/> .
+@prefix thispub: <https://dx.doi.org/10.1186/s13058-014-0482-y#> .
+@prefix certainty: <http://w3id.org/orca-x#> .
+
+sub:Head {
+        this: np:hasAssertion sub:assertion ;
+        np:hasProvenance sub:provenance ;
+        np:hasPublicationInfo sub:pubinfo ;
+        a np:Nanopublication .
+}
+
+sub:assertion {
+		certainty:asserts-16f3d217-da33-11e9-b6e5-fc4dd447acf2 rdf:singletonPropertyOf certainty:asserts .
+		thispub: certainty:asserts-16f3d217-da33-11e9-b6e5-fc4dd447acf2 "Neither ETP-45658 (nor PI-103) treatment significantly induced any known toxicity pathways (Figure A and B) suggesting that ETP-45658 treatment could be associated with a highly acceptable toxicity profile, particularly when compared to many chemotherapeutics in use today.Figure 2 Focused toxicity and safety assessment of ETP-45658. (A) Analysis of BioFunctions using Ingenuity Pathway Tox Analysis comparing ETP-45658 vs DMSO (sorted by P value where Y axis represents -log (P value). (B) Analysis of canonical pathways using Ingenuity Pathway Tox Analysis comparing ETP-45658 vs DMSO (sorted by P value). Y axis represents -log (P value). The line graph indicates the canonical pathway ratio (number of molecules in a given pathway that meet cut-off criteria, divided by total number of molecules that make up that pathway). None of the canonical pathways have been identified as significant suggesting little or no toxicity of treatment. Our data thus far indicates that ETP-45658 (as well as a PI-103) exerts its effect by inhibiting the cell cycle. However the phosphatidylinositol 3-kinase signalling pathway can also direct a plethora of other cellular functions and responses by the regulation of multiple transcription factors that includes Forkhead box O [ , ], p53 [ ], YAP [ ], NFkB [ ], CREB [ , ], c-MYC [ , ], and c-JUN [ ]. To address which transcription factor(s) directed the cellular response to ETP-45658 treatment, we carried out an enrichment analysis for transcription factor binding sites based on our genome-wide array data sets. Our studies identified binding sites for Forkhead box Os, E12, MAZ, LEF1 and NRF1, to be enriched and consistent with the toxicity analysis we conducted, we did not observe any binding site enrichment for p53, NFkB or c-JUN (Figure A). The significant accumulation of Forkhead box O-dependent genes led us to question if there was an equivalent enrichment of Forkhead box O-bound DNA motifs. A transcription factor enrichment analysis demonstrated that there was a highly significant increase of bound Forkhead box O sites (Figure B)." .
+		thispub: certainty:hasConfidenceLevel certainty:CategoryB .
+}
+
+sub:provenance {   
+        sub:assertion dcterms:author "Certainty Classifier" ;
+        dcterms:title "Automated Certainty Classification of Statement from https:dx.doi.org/10.1186/s13058-014-0482-y" ;
+        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+        schema:identifier this: ;
+        dcat:distribution sub:_1 .
+
+        sub:_1   dcelem:format "application/pdf" ;
+        a void:Dataset , dcat:Distribution ;
+        dcat:downloadURL <https://dx.doi.org/10.1186/s13058-014-0482-y> .
+
+}
+
+sub:pubinfo {
+        this: dcterms:created '2019-09-18'^^xsd:date ;
+        dcterms:rights <https://creativecommons.org/publicdomain/zero/1.0> ;
+        dcterms:rightsHolder <https://orcid.org/0000-0002-9416-6743> ;
+        pav:authoredBy "Mario Prieto" , <https://orcid.org/0000-0002-9416-6743> ;
+        pav:versionNumber "1" ;
+        prov:wasGeneratedBy "Mario Prieto's Certainty Classifier" .
+}
+    

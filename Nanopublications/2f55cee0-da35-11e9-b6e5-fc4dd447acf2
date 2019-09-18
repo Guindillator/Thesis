@@ -1,0 +1,51 @@
+@prefix this: <http://w3id.org/nanopub_mario/CertID_2f55cee0-da35-11e9-b6e5-fc4dd447acf2> .
+@prefix sub: <http://w3id.org/nanopub_mario/CertID_2f55cee0-da35-11e9-b6e5-fc4dd447acf2#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcelem: <http://purl.org/dc/elements/1.1/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix pav: <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <https://schema.org/> .
+@prefix thispub: <https://dx.doi.org/10.1038/onc.2011.284#> .
+@prefix certainty: <http://w3id.org/orca-x#> .
+
+sub:Head {
+        this: np:hasAssertion sub:assertion ;
+        np:hasProvenance sub:provenance ;
+        np:hasPublicationInfo sub:pubinfo ;
+        a np:Nanopublication .
+}
+
+sub:assertion {
+		certainty:asserts-2f55cee0-da35-11e9-b6e5-fc4dd447acf2 rdf:singletonPropertyOf certainty:asserts .
+		thispub: certainty:asserts-2f55cee0-da35-11e9-b6e5-fc4dd447acf2 "Previously, we showed that 14-3-3ζ siRNA treatment of MDA-MB-435 cancer xenografts reduced tumor growth and increased tumor cell apoptosis ( )." .
+		thispub: certainty:hasConfidenceLevel certainty:CategoryA .
+}
+
+sub:provenance {   
+        sub:assertion dcterms:author "Certainty Classifier" ;
+        dcterms:title "Automated Certainty Classification of Statement from https:dx.doi.org/10.1038/onc.2011.284" ;
+        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+        schema:identifier this: ;
+        dcat:distribution sub:_1 .
+
+        sub:_1   dcelem:format "application/pdf" ;
+        a void:Dataset , dcat:Distribution ;
+        dcat:downloadURL <https://dx.doi.org/10.1038/onc.2011.284> .
+
+}
+
+sub:pubinfo {
+        this: dcterms:created '2019-09-18'^^xsd:date ;
+        dcterms:rights <https://creativecommons.org/publicdomain/zero/1.0> ;
+        dcterms:rightsHolder <https://orcid.org/0000-0002-9416-6743> ;
+        pav:authoredBy "Mario Prieto" , <https://orcid.org/0000-0002-9416-6743> ;
+        pav:versionNumber "1" ;
+        prov:wasGeneratedBy "Mario Prieto's Certainty Classifier" .
+}
+    

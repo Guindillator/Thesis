@@ -1,0 +1,51 @@
+@prefix this: <http://w3id.org/nanopub_mario/CertID_aa8575d4-da33-11e9-b6e5-fc4dd447acf2> .
+@prefix sub: <http://w3id.org/nanopub_mario/CertID_aa8575d4-da33-11e9-b6e5-fc4dd447acf2#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcelem: <http://purl.org/dc/elements/1.1/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix pav: <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <https://schema.org/> .
+@prefix thispub: <https://dx.doi.org/10.1038/ncomms4393#> .
+@prefix certainty: <http://w3id.org/orca-x#> .
+
+sub:Head {
+        this: np:hasAssertion sub:assertion ;
+        np:hasProvenance sub:provenance ;
+        np:hasPublicationInfo sub:pubinfo ;
+        a np:Nanopublication .
+}
+
+sub:assertion {
+		certainty:asserts-aa8575d4-da33-11e9-b6e5-fc4dd447acf2 rdf:singletonPropertyOf certainty:asserts .
+		thispub: certainty:asserts-aa8575d4-da33-11e9-b6e5-fc4dd447acf2 "Of note, we found that the ectopic expression of NDRG2 in two human cancer cell lines carrying wild-type PTEN ((SAS (oral squamous cell carcinoma) and HeLa (cervical cancer)) resulted in marked decreases in PTEN-Ser380/Thr382/Thr383 phosphorylation and phosphatidylinositol 3-kinase-AKT inactivation ( ). These findings suggest that downregulation of NDRG2 could have an important role in activating the phosphatidylinositol 3-kinase-AKT signalling pathway in various types of cancer. In this study, we show that NDRG2 interacts with PTEN and promotes its dephosphorylation at Ser380/Thr382/Thr383 by recruiting PP2A to PTEN. We also demonstrated that loss of NDRG2 expression via genetic or epigenetic abnormalities in adult T-cell leukaemia-lymphoma cells can contribute to the increase in PTEN-Ser380/Thr382/Thr383 phosphorylation, which leads to inactivation of PTEN lipid phosphatase activity and activation of the phosphatidylinositol 3-kinase-AKT pathway. The imbalance of the expression of NDRG2 and as yet unidentified protein kinases might account for an elevation of PTEN-Ser380/Thr382/Thr383 phosphorylation with a high amount of phosphorylated AKT in adult T-cell leukaemia-lymphoma cells. Finally, we showed that NDRG2-deficient mice develop multiple types of tumours, thus establishing that loss of NDRG2 expression can contribute to tumour development. PTEN stability and lipid phosphatase activity can be regulated through phosphorylation of the C-terminal tail, which contains a cluster of serine-threonine residues: Ser370, Ser380, Thr382, Thr383 and Ser385 (ref. ). Although the cluster of Ser380/Thr382/Thr383 residues in the C-terminal tail are thought to be minor phosphorylation sites , the level of phosphorylated PTEN-Ser380/Thr382/Thr383 has been shown to be rapidly and transiently increased in hypothalamic cells treated with leptin and in rat brains following transient middle cerebral artery occlusion . CK2 is known to be a major kinase that phosphorylates PTEN at the C-terminal serine-threonine cluster, but phosphorylation of Ser380/Thr382/Thr383 by CK2 is still under debate . We observed that suppression of CK2 activity with specific inhibitors in adult T-cell leukaemia-lymphoma cells did not influence PTEN-Ser380/Thr382/Thr383 phosphorylation." .
+		thispub: certainty:hasConfidenceLevel certainty:CategoryB .
+}
+
+sub:provenance {   
+        sub:assertion dcterms:author "Certainty Classifier" ;
+        dcterms:title "Automated Certainty Classification of Statement from https:dx.doi.org/10.1038/ncomms4393" ;
+        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+        schema:identifier this: ;
+        dcat:distribution sub:_1 .
+
+        sub:_1   dcelem:format "application/pdf" ;
+        a void:Dataset , dcat:Distribution ;
+        dcat:downloadURL <https://dx.doi.org/10.1038/ncomms4393> .
+
+}
+
+sub:pubinfo {
+        this: dcterms:created '2019-09-18'^^xsd:date ;
+        dcterms:rights <https://creativecommons.org/publicdomain/zero/1.0> ;
+        dcterms:rightsHolder <https://orcid.org/0000-0002-9416-6743> ;
+        pav:authoredBy "Mario Prieto" , <https://orcid.org/0000-0002-9416-6743> ;
+        pav:versionNumber "1" ;
+        prov:wasGeneratedBy "Mario Prieto's Certainty Classifier" .
+}
+    

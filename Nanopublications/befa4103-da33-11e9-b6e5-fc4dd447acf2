@@ -1,0 +1,52 @@
+@prefix this: <http://w3id.org/nanopub_mario/CertID_befa4103-da33-11e9-b6e5-fc4dd447acf2> .
+@prefix sub: <http://w3id.org/nanopub_mario/CertID_befa4103-da33-11e9-b6e5-fc4dd447acf2#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcelem: <http://purl.org/dc/elements/1.1/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix pav: <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <https://schema.org/> .
+@prefix certainty: <http://w3id.org/orca-x#> .
+@prefix thispub: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2212462> .
+
+sub:Head {
+        this: np:hasAssertion sub:assertion ;
+        np:hasProvenance sub:provenance ;
+        np:hasPublicationInfo sub:pubinfo ;
+        a np:Nanopublication .
+}
+
+sub:assertion {
+		certainty:asserts-befa4103-da33-11e9-b6e5-fc4dd447acf2 rdf:singletonPropertyOf certainty:asserts .
+		thispub: certainty:asserts-befa4103-da33-11e9-b6e5-fc4dd447acf2 "Both molecules are type III transmembrane molecules that have only a very short extracellular domain and possess a number of potential tyrosine-phosphorylation sites in their intracytoplasmic tails that could mediate binding to src homology 2 domains of intracellular signaling molecules." .
+		thispub: certainty:hasConfidenceLevel certainty:CategoryC .
+}
+
+sub:provenance {   
+        sub:assertion dcterms:author "Certainty Classifier" ;
+        dcterms:title "Automated Certainty Classification of Statement from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2212462" ;
+        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+        schema:identifier this: ;
+        dcat:distribution sub:_1 .
+
+        sub:_1   dcelem:format "application/pdf" ;
+        a void:Dataset , dcat:Distribution ;
+        dcat:downloadURL <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2212462> .
+
+}
+
+sub:pubinfo {
+        this: dcterms:created '2019-09-18'^^xsd:date ;
+        dcterms:rights <https://creativecommons.org/publicdomain/zero/1.0> ;
+        dcterms:rightsHolder <https://orcid.org/0000-0002-9416-6743> ;
+        pav:authoredBy "Mario Prieto" , <https://orcid.org/0000-0002-9416-6743> ;
+        pav:versionNumber "1" ;
+        prov:wasGeneratedBy "Mario Prieto's Certainty Classifier" .
+
+}
+    

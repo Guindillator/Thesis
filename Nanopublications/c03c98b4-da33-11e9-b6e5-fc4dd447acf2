@@ -1,0 +1,51 @@
+@prefix this: <http://w3id.org/nanopub_mario/CertID_c03c98b4-da33-11e9-b6e5-fc4dd447acf2> .
+@prefix sub: <http://w3id.org/nanopub_mario/CertID_c03c98b4-da33-11e9-b6e5-fc4dd447acf2#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcelem: <http://purl.org/dc/elements/1.1/> .
+@prefix np: <http://www.nanopub.org/nschema#> .
+@prefix pav: <http://swan.mindinformatics.org/ontologies/1.2/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema: <https://schema.org/> .
+@prefix thispub: <https://dx.doi.org/10.1371/journal.pone.0143847#> .
+@prefix certainty: <http://w3id.org/orca-x#> .
+
+sub:Head {
+        this: np:hasAssertion sub:assertion ;
+        np:hasProvenance sub:provenance ;
+        np:hasPublicationInfo sub:pubinfo ;
+        a np:Nanopublication .
+}
+
+sub:assertion {
+		certainty:asserts-c03c98b4-da33-11e9-b6e5-fc4dd447acf2 rdf:singletonPropertyOf certainty:asserts .
+		thispub: certainty:asserts-c03c98b4-da33-11e9-b6e5-fc4dd447acf2 "In addition, annexin V/PI staining showed that TAS-116 significantly enhanced apoptosis induced by these inhibitors in rat sarcoma-mutated myeloma cell lines (P < 0.01 in each combination treatment versus either monotherapy or control in NCI-H929 and myeloma.1S cell lines; P < 0.05 in each combination treatment versus either monotherapy or control in RPMI-8226 cell line; P < 0.01 in dabrafenib and AZD6244 combination treatment versus either monotherapy or control, and P < 0.01 in tipifarnib combination treatment versus monotherapy or control in INA6 cell line) ( ). (A) NCI-H929 cells, (B) INA6, (C) RPMI8226, and (D) myeloma1.S cells were treated with TAS-116 (0-1 μM) in combination with tipifarnib (0-2 μM), dabrafenib (0-5 μM), or AZD6244 (0-4 μM) for 48 h, and then the viability was analyzed with the MTT assay." .
+		thispub: certainty:hasConfidenceLevel certainty:CategoryA .
+}
+
+sub:provenance {   
+        sub:assertion dcterms:author "Certainty Classifier" ;
+        dcterms:title "Automated Certainty Classification of Statement from https:dx.doi.org/10.1371/journal.pone.0143847" ;
+        dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+        schema:identifier this: ;
+        dcat:distribution sub:_1 .
+
+        sub:_1   dcelem:format "application/pdf" ;
+        a void:Dataset , dcat:Distribution ;
+        dcat:downloadURL <https://dx.doi.org/10.1371/journal.pone.0143847> .
+
+}
+
+sub:pubinfo {
+        this: dcterms:created '2019-09-18'^^xsd:date ;
+        dcterms:rights <https://creativecommons.org/publicdomain/zero/1.0> ;
+        dcterms:rightsHolder <https://orcid.org/0000-0002-9416-6743> ;
+        pav:authoredBy "Mario Prieto" , <https://orcid.org/0000-0002-9416-6743> ;
+        pav:versionNumber "1" ;
+        prov:wasGeneratedBy "Mario Prieto's Certainty Classifier" .
+}
+    

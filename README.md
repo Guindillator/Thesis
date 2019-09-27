@@ -1,2 +1,2 @@
 # thesis
-All nanopublications related with my thesis project
+All nanopublications, code and raw data related with my thesis project
